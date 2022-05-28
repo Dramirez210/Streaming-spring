@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="ISO-8859-1">
+    <title>NETFLIX Formulario</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="contenedor-registro">
+            <div class="jumbotron">
+                <div class="thumbnail">
+                    <center><h1><i>Formulario Alta de suscriptor</i></h1></center>
+                    <div class="row">
+                        <div class="col-sm-1">
+                        </div>
+                        <div class="col-sm-6">
+                            <br>
+                            <img src="../static/img/net2.jpeg" style="border-radius: 10%" th:src="@{img/net2.jpeg}" class="img img-responsive"/>
+                            <br>
+                            <br>
+                            <img src="../static/img/net.jpeg" style="border-radius: 10%" th:src="@{img/net.jpeg}" class="img img-responsive"/>
+                        </div>
+                        <div class="col-sm-5">
+                            <form th:action="@{/save}" th:object=${suscriptor} method="POST">
+                                <div class="form-group">
+                                    <h3><i>Nombre:</i></h3>
+                                    <input th:field="*{nombre}" type="text" class="form-control" placeholder="Nombre" required />
+                                    <h3><i>Apellido Paterno:</i></h3>
+                                    <input th:field="*{apellidoPaterno}" type="text"  class="form-control" placeholder="Paterno" required />
+                                    <h3><i>Apellido Materno:</i></h3>
+                                    <input th:field="*{apellidoMaterno}" type="text" class="form-control" placeholder="Materno" required />
+                                    <label for="controlServicio"><h3>Servicio:</h3></label>
+                                    <select th:field="*{servicio}" class="form-control" id="controlServicio">
+                                        <option value="Streaming">Streaming</option>
+                                    </select>
+                                    <h3><i>Fecha de nacimiento:</i></h3>
+                                    <input th:field="*{fechaNacimiento}" type="text" class="form-control"  required />
+                                    <label for="controlPlan"><h3>Plan:</h3></label>
+                                    <select th:field="*{plan}" class="form-control" id="controlPlan">
+                                        <option value="Basico">Basico</option>
+                                        <option value="Estandar">Estandar</option>
+                                        <option value="Premium">Premium</option>
+                                    </select>
+                                    <label for="controlEstatus"><h3>Estatus:</h3></label>
+                                    <select th:field="*{estatus}" class="form-control" id="controlEstatus">
+                                        <option value="Activo">Activo</option>
+                                        <option value="Inactivo">Inactivo</option>
+                                    </select>
+                                    <br>
+                                    <input type="submit" class="btn btn-primary btn-block" value="Registrar datos">
+                                    <br>
+                                    <input type="reset" class="btn btn-danger btn-block" value="Limpiar datos">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
