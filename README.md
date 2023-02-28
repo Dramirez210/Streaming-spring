@@ -1,5 +1,7 @@
 # Streaming-spring
 
+![CRUD](img/Captura.PNG)
+
 #### Universidad Autónoma de la Ciudad de México
 
 #### Ingenieria en software
